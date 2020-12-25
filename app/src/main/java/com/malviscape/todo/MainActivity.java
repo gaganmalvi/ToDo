@@ -1,25 +1,27 @@
 package com.malviscape.todo;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
-import android.view.View;
-import android.widget.AdapterView;
 
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
+
+import static org.apache.commons.io.FileUtils.writeLines;
 
 public class MainActivity extends AppCompatActivity {
     private ArrayList<String> items;
-    private android.widget.ArrayAdapter<String> itemsAdapter;
-    private android.widget.ListView ListItems;
-    private android.widget.EditText editToDo;
+    private ArrayAdapter<String> itemsAdapter;
+    private ListView ListItems;
+    private EditText editToDo;
 
     private void readToDo() {
         File filesDir = getFilesDir();
@@ -35,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         File filesDir = getFilesDir();
         File todoFile = new File(filesDir, "todo_contents.cartel");
         try {
-            FileUtils.writeLines(todoFile, items);
+            writeLines(todoFile, items);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -50,14 +52,14 @@ public class MainActivity extends AppCompatActivity {
         ListItems = findViewById(R.id.ListItems);
         items = new ArrayList<>();
         readToDo();
-        itemsAdapter = new android.widget.ArrayAdapter<>(this,
+        itemsAdapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, items);
         ListItems.setAdapter(itemsAdapter);
         setupListViewListener();
     }
 
     public void fab(View v) {
-        android.widget.EditText editToDo = findViewById(R.id.editToDo);
+        EditText editToDo = findViewById(R.id.editToDo);
         String itemText = editToDo.getText().toString();
         itemsAdapter.add(itemText);
         editToDo.setText("");
@@ -66,16 +68,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupListViewListener() {
         ListItems.setOnItemLongClickListener(
-                new AdapterView.OnItemLongClickListener() {
-                    @Override
-                    public boolean onItemLongClick(android.widget.AdapterView<?> adapter,
-                                                   View item, int pos, long id) {
-                        items.remove(pos);
-                        itemsAdapter.notifyDataSetChanged();
-                        saveToDo();
-                        return true;
-                    }
-
+                (adapter, item, pos, id) -> {
+                    items.remove(pos);
+                    itemsAdapter.notifyDataSetChanged();
+                    saveToDo();
+                    return true;
                 });
 
     }
