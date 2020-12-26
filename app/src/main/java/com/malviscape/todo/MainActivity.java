@@ -7,6 +7,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -67,6 +68,14 @@ public class MainActivity extends AppCompatActivity {
         ListItems.setAdapter(itemsAdapter);
         setupListViewListener();
         Toolbar();
+    }
+
+    @Override
+    public void onContentChanged() {
+        super.onContentChanged();
+        ImageView emptyView  = findViewById(R.id.emptyimage);
+        ListView ListItems = (ListView) findViewById(R.id.ListItems);
+        ListItems.setEmptyView(emptyView);
     }
 
     public void fab(View v) {

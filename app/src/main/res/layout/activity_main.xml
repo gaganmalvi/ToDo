@@ -32,8 +32,14 @@
         android:id="@+id/ListItems"
         android:layout_width="wrap_content"
         android:layout_height="607dp"
-
         android:layout_marginTop="100dp" />
+
+    <ImageView
+        android:id="@+id/emptyimage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/taskcomplete_background"
+        android:layout_gravity="center"/>
 
     <EditText
         android:id="@+id/editToDo"
