@@ -1,7 +1,7 @@
 # To Do
 ##### A simple To Do app written in Java
 Platform: Android<br>
-Min SDK platform: 28 (Android 9/P)
+Min SDK platform: 28 (Android 9/P)<br>
 Target SDK platform: 30 (Android 11/R)
 ```
 /*
@@ -11,8 +11,5 @@ Target SDK platform: 30 (Android 11/R)
  * Your warranty will be void if you tamper with any part of your device / software.
  */
 ```
-
-### In The Future
-- Improve UI/UX.
 
 ###### Support email: college@malvi.ml
