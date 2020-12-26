@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, toast_empty, Toast.LENGTH_SHORT).show();
         }
         else {
-            itemsAdapter.add(itemText);
+            itemsAdapter.add("- "+itemText);
             editToDo.setText("");
         }
         saveToDo();
