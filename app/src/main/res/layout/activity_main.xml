@@ -23,10 +23,10 @@
         android:layout_margin="@dimen/fab_margin"
         android:contentDescription="@string/fab_desc"
         android:onClick="fab"
-        app:backgroundTint="#FF8400"
+        app:backgroundTint="#FFF200"
         app:rippleColor="#000000"
-        app:srcCompat="@android:drawable/ic_input_add"
-        app:useCompatPadding="true"/>
+        app:srcCompat="@drawable/plus_background"
+        app:useCompatPadding="true" />
 
     <ListView
         android:id="@+id/ListItems"
@@ -54,31 +54,29 @@
         android:inputType="textPersonName"
         android:padding="8dp"
         android:gravity="center"
-        android:fontFamily="@font/opslate"
+        android:fontFamily="@font/segoeuil"
         android:textSize="13sp"/>
 
     <androidx.appcompat.widget.Toolbar
-        android:fitsSystemWindows="true"
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="100dp"
         android:background="@android:color/transparent"
+        android:fitsSystemWindows="true"
         app:layout_anchor="@+id/appBarLayout2"
         app:popupTheme="@style/Theme.ToDo.PopupOverlay"
         app:theme="@style/AppTheme.ToolbarFont">
 
         <TextView
             android:id="@+id/toolbar_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:textColor="@android:color/white"
-            android:fontFamily="@font/opslate"
-            android:layout_marginTop="20dp"
-            android:textSize="32sp"
             style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
-            android:layout_gravity="center"
-            />
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:fontFamily="@font/segoeuil"
+            android:text="@string/app_title"
+            android:textColor="@android:color/white"
+            android:textSize="50sp" />
 
     </androidx.appcompat.widget.Toolbar>
 
