@@ -30,7 +30,9 @@
 
     <ListView
         android:id="@+id/ListItems"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:divider="@null"
+        android:dividerHeight="0dp"
         android:layout_height="607dp"
         android:layout_marginTop="100dp" />
 
