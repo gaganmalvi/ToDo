@@ -1,7 +1,13 @@
 package com.malviscape.todo;
 
+import android.app.Activity;
+import android.content.Context;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -11,6 +17,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 
 import org.apache.commons.io.FileUtils;
 
@@ -18,13 +25,17 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import static com.malviscape.todo.R.string.toast_empty;
+import static com.malviscape.todo.R.string.*;
 import static org.apache.commons.io.FileUtils.writeLines;
 
 public class MainActivity extends AppCompatActivity {
     private ArrayList<String> items;
     private ArrayAdapter<String> itemsAdapter;
     private ListView ListItems;
+    private CoordinatorLayout mCLayout;
+    private Typeface mTypeface;
+    private Context mContext;
+    private Activity mActivity;
 
     public void Toolbar(){
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -57,18 +68,38 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mContext = getApplicationContext();
+        mActivity = MainActivity.this;
+        mCLayout = (CoordinatorLayout) findViewById(R.id.coordinator_layout);
+        mTypeface = Typeface.createFromAsset(getAssets(), "fonts/segoeuil.ttf");
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ListItems = findViewById(R.id.ListItems);
         items = new ArrayList<>();
         readToDo();
-        itemsAdapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_list_item_1, items);
+        itemsAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, items) {
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                // Cast the list view each item as text view
+                TextView item = (TextView) super.getView(position, convertView, parent);
+
+                // Set the typeface/font for the current item
+                item.setTypeface(mTypeface);
+
+                // Set the font size.
+                item.setTextSize(TypedValue.COMPLEX_UNIT_DIP,18);
+
+                // return the view
+                return item;
+
+            }
+
+        };
         ListItems.setAdapter(itemsAdapter);
         setupListViewListener();
         Toolbar();
     }
-
     @Override
     public void onContentChanged() {
         super.onContentChanged();
@@ -107,6 +138,7 @@ public class MainActivity extends AppCompatActivity {
                                     items.remove(position);
                                     itemsAdapter.notifyDataSetChanged();
                                     saveToDo();
+                                    Toast.makeText(MainActivity.this, task_complete, Toast.LENGTH_SHORT).show();
 
                                 }
 

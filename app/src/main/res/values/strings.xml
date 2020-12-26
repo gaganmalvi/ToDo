@@ -4,4 +4,5 @@
     <string name="fab_desc">Add task</string>
     <string name="editboxtext">What would you like to do today?</string>
     <string name="toast_empty">You can\'t add an empty task!</string>
+    <string name="task_complete">Task removed.</string>
 </resources>
