@@ -1,10 +1,7 @@
 package com.malviscape.todo;
 
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -87,19 +84,37 @@ public class MainActivity extends AppCompatActivity {
         }
         else {
             itemsAdapter.add(itemText);
+            editToDo.setText("");
         }
         saveToDo();
     }
 
     private void setupListViewListener() {
-        ListItems.setOnItemLongClickListener(
-                (adapter, item, pos, id) -> {
-                    items.remove(pos);
-                    itemsAdapter.notifyDataSetChanged();
-                    saveToDo();
-                    return true;
-                });
+        SwipeDismissListViewTouchListener touchListener =
+                new SwipeDismissListViewTouchListener(
+                        ListItems,
+                        new SwipeDismissListViewTouchListener.DismissCallbacks() {
+                            @Override
+                            public boolean canDismiss(int position) {
+                                return true;
+                            }
+
+                            @Override
+                            public void onDismiss(ListView listView, int[] reverseSortedPositions) {
+                                for (int position : reverseSortedPositions) {
+
+                                    items.remove(position);
+                                    itemsAdapter.notifyDataSetChanged();
+                                    saveToDo();
+
+                                }
+
+
+                            }
+                        });
+        ListItems.setOnTouchListener(touchListener);
 
     }
+
 }
 
