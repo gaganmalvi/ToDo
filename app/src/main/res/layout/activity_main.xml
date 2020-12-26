@@ -55,7 +55,7 @@
         android:padding="8dp"
         android:gravity="center"
         android:fontFamily="@font/segoeuil"
-        android:textSize="13sp"/>
+        android:textSize="17sp"/>
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -64,7 +64,7 @@
         android:background="@android:color/transparent"
         android:fitsSystemWindows="true"
         app:layout_anchor="@+id/appBarLayout2"
-        app:popupTheme="@style/Theme.ToDo.PopupOverlay"
+        app:popupTheme="@style/Theme.ToDo.NoActionBar"
         app:theme="@style/AppTheme.ToolbarFont">
 
         <TextView
@@ -75,7 +75,7 @@
             android:layout_gravity="left"
             android:fontFamily="@font/segoeuil"
             android:text="@string/app_title"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/darker_gray"
             android:textSize="50sp" />
 
     </androidx.appcompat.widget.Toolbar>
