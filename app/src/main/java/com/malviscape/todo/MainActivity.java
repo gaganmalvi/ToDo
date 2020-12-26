@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -81,8 +82,12 @@ public class MainActivity extends AppCompatActivity {
     public void fab(View v) {
         EditText editToDo = findViewById(R.id.editToDo);
         String itemText = editToDo.getText().toString();
-        itemsAdapter.add(itemText);
-        editToDo.setText("");
+        if (editToDo.getText().toString().trim().length() <= 0) {
+            Toast.makeText(MainActivity.this, "Task cannot be empty.", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            itemsAdapter.add(itemText);
+        }
         saveToDo();
     }
 
