@@ -31,7 +31,8 @@
     <ListView
         android:id="@+id/ListItems"
         android:layout_width="wrap_content"
-        android:layout_height="544dp"
+        android:layout_height="607dp"
+
         android:layout_marginTop="100dp" />
 
     <EditText
@@ -46,18 +47,18 @@
         android:hint="@string/editboxtext"
         android:inputType="textPersonName"
         android:padding="8dp"
-        android:textAlignment="center"
+        android:gravity="center"
         android:fontFamily="@font/opslate"
-        android:textSize="13dp"/>
+        android:textSize="13sp"/>
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="#0000FF"
+        android:background="@android:color/transparent"
         app:layout_anchor="@+id/appBarLayout2"
-        app:layout_anchorGravity="center"
-        app:popupTheme="@style/Theme.ToDo.PopupOverlay" />
+        app:popupTheme="@style/Theme.ToDo.PopupOverlay"
+        app:theme="@style/AppTheme.ToolbarFont"/>
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
