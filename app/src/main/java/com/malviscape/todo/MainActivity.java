@@ -1,10 +1,14 @@
 package com.malviscape.todo;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -21,6 +25,13 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<String> items;
     private ArrayAdapter<String> itemsAdapter;
     private ListView ListItems;
+
+    public void Toolbar(){
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        TextView mTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
+    }
 
     private void readToDo() {
         File filesDir = getFilesDir();
@@ -55,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
                 android.R.layout.simple_list_item_1, items);
         ListItems.setAdapter(itemsAdapter);
         setupListViewListener();
+        Toolbar();
     }
 
     public void fab(View v) {

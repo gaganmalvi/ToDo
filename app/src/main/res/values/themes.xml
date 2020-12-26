@@ -22,7 +22,5 @@
     <style name="Theme.ToDo.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.ToDo.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
-    <style name="AppTheme.ToolbarFont" parent="Theme.ToDo">
-        <item name="android:fontFamily">@font/opslate</item>
-    </style>
+    <style name="AppTheme.ToolbarFont" parent="Theme.ToDo.NoActionBar"/>
 </resources>
