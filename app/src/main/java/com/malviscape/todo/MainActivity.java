@@ -18,6 +18,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import static com.malviscape.todo.R.string.toast_empty;
 import static org.apache.commons.io.FileUtils.writeLines;
 
 public class MainActivity extends AppCompatActivity {
@@ -80,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         EditText editToDo = findViewById(R.id.editToDo);
         String itemText = editToDo.getText().toString();
         if (editToDo.getText().toString().trim().length() <= 0) {
-            Toast.makeText(MainActivity.this, "Task cannot be empty.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, toast_empty, Toast.LENGTH_SHORT).show();
         }
         else {
             itemsAdapter.add(itemText);
