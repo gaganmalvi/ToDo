@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">To Do</string>
+    <string name="fab_desc">Add task</string>
+    <string name="editboxtext">What would you like to do today?</string>
 </resources>
