@@ -12,6 +12,11 @@ Target SDK platform: 30 (Android 11/R)
  */
 ```
 
+### Notes
+- Swipe to Delete Task
+- Long press to delete task
+- Clean UI
+
 ### Screenshots
 
 <img src="/art/ss1.jpg" width="425"/> <img src="/art/ss2.jpg" width="425"/> <img src="/art/ss3.jpg" width="425"/>
