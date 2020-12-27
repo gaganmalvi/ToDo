@@ -138,7 +138,6 @@ public class MainActivity extends AppCompatActivity {
                                     items.remove(position);
                                     itemsAdapter.notifyDataSetChanged();
                                     saveToDo();
-                                    Toast.makeText(MainActivity.this, task_complete, Toast.LENGTH_SHORT).show();
 
                                 }
 
