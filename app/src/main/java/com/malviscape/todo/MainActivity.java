@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
                 item.setTypeface(mTypeface);
 
                 // Set the font size.
-                item.setTextSize(TypedValue.COMPLEX_UNIT_DIP,18);
+                item.setTextSize(TypedValue.COMPLEX_UNIT_DIP,16);
 
                 // return the view
                 return item;
@@ -145,6 +145,15 @@ public class MainActivity extends AppCompatActivity {
                             }
                         });
         ListItems.setOnTouchListener(touchListener);
+
+        // Add long click to remove too.
+        ListItems.setOnItemLongClickListener(
+                (adapter, item, pos, id) -> {
+                    items.remove(pos);
+                    itemsAdapter.notifyDataSetChanged();
+                    saveToDo();
+                    return true;
+                });
 
     }
 
