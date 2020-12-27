@@ -12,4 +12,8 @@ Target SDK platform: 30 (Android 11/R)
  */
 ```
 
+### Screenshots
+
+<img src="/art/ss1.jpg" width="425"/> <img src="/art/ss2.jpg" width="425"/> <img src="/art/ss3.jpg" width="425"/>
+
 ###### Support email: college@malvi.ml
