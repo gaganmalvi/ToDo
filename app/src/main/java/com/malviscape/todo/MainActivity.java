@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         mContext = getApplicationContext();
         mActivity = MainActivity.this;
         mCLayout = (CoordinatorLayout) findViewById(R.id.coordinator_layout);
-        mTypeface = Typeface.createFromAsset(getAssets(), "fonts/segoeuil.ttf");
+        mTypeface = Typeface.createFromAsset(getAssets(), "fonts/and_black.ttf");
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ListItems = findViewById(R.id.ListItems);

@@ -24,7 +24,7 @@
         android:layout_margin="@dimen/fab_margin"
         android:contentDescription="@string/fab_desc"
         android:onClick="fab"
-        app:backgroundTint="#FFF200"
+        app:backgroundTint="#FFC93F"
         app:rippleColor="#000000"
         app:srcCompat="@drawable/plus_background"
         app:useCompatPadding="true" />
@@ -53,7 +53,7 @@
         android:layout_marginBottom="@dimen/fab_margin"
         android:background="@drawable/edittext"
         android:ems="10"
-        android:fontFamily="@font/segoeuil"
+        android:fontFamily="@fonts/circularstd_book"
         android:gravity="center"
         android:hint="@string/editboxtext"
         android:inputType="textPersonName"
@@ -75,9 +75,8 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="left"
-            android:fontFamily="@font/segoeuil"
             android:text="@string/app_title"
-            android:textColor="@android:color/holo_green_light"
+            android:textColor="#41DD89"
             android:textSize="60sp" />
 
     </androidx.appcompat.widget.Toolbar>

@@ -7,12 +7,12 @@
       android:scaleY="1.9636364"
       android:translateY="2.9454546">
     <path
-        android:strokeWidth="1"
+        android:strokeWidth="3"
         android:pathData="M27.5,0L27.5,52"
         android:fillColor="#00000000"
         android:strokeColor="#000000"/>
     <path
-        android:strokeWidth="1"
+        android:strokeWidth="3"
         android:pathData="M55,26.5L0,26.5"
         android:fillColor="#00000000"
         android:strokeColor="#000000"/>
