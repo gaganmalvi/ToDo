@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onContentChanged() {
         super.onContentChanged();
-        ImageView emptyView  = findViewById(R.id.emptyimage);
+        ImageView emptyView  = findViewById(R.id.animationView);
         ListView ListItems = (ListView) findViewById(R.id.ListItems);
         ListItems.setEmptyView(emptyView);
     }

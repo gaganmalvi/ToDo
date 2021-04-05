@@ -38,12 +38,14 @@
         android:divider="@null"
         android:dividerHeight="0dp" />
 
-    <ImageView
-        android:id="@+id/emptyimage"
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@mipmap/taskcomplete_background"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        app:lottie_rawRes="@raw/animation"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"/>
 
     <EditText
         android:id="@+id/editToDo"
